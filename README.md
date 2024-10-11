@@ -12,7 +12,7 @@ A dark and light colorscheme for Vim based on the [original work for Emacs by Pr
 
 ## Installation
 
-Optionally use your favorite package manager like (vim-plug)(https://github.com/junegunn/vim-plug).
+Optionally use your favorite package manager like [vim-plug](https://github.com/junegunn/vim-plug).
 
 ```vim
 Plug 'c9rgreen/vim-colors-modus'
