@@ -20,6 +20,6 @@ Plug 'c9rgreen/vim-colors-modus'
 
 ## Extra
 
-An extra theme for [macOS Terminal](https://support.apple.com/guide/terminal/welcome/mac) is included.
+Extra themes for [macOS Terminal](https://support.apple.com/guide/terminal/welcome/mac) and [macOS color palettes](https://support.apple.com/guide/mac-help/use-colors-in-documents-on-mac-mchlp1190/mac) are included.
 
 The typeface used in the screenshot is [San Francisco Mono](https://developer.apple.com/fonts/).
