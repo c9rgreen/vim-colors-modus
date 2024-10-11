@@ -1,0 +1,19 @@
+*modus.txt*	For Vim version 9.0	Last change: 2024 Oct 11
+
+
+		  Modus color scheme    by Christopher
+
+Modus, a color scheme with a unique touch.
+
+==============================================================================
+Color scheme options					modus-options*
+
+						*g:modus_transp_bg*
+Set to 1 if you want a transparent background. Takes effect only in the
+terminal.
+>
+	let g:modus_transp_bg = 0
+<
+
+ vim:tw=78:ts=8:noet:ft=help:norl:
+

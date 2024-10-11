@@ -1,0 +1,721 @@
+; vim: ft=colortemplate fdm=marker cc=22,40,58 et ts=2 sw=2
+
+; Information {{{
+; Mandatory
+Full name:     Modus
+Short name:    modus
+Author:        Christopher Green <cgreen@saguaro.space>
+; Optional
+Website:       https://saguaro.space
+Description:   A port of the Emacs Modus themes by Protesilaos Stavrou (https://protesilaos.com/emacs/modus-themes). Based on work by Miika Nissi (https://miikanissi.com/blog/modus-themes-for-neovim/).
+License:       MIT License
+Option Prefix: modus
+; }}}
+
+; Documentation {{{
+Include: _help.colortemplate
+; }}}
+
+; Global definitions - put at the top of the colorscheme {{{
+Added                -> diffAdded
+Boolean              -> Constant
+Character            -> Constant
+Changed              -> diffChanged
+Conditional          -> Statement
+CurSearch            -> IncSearch
+CursorLineFold       -> FoldColumn
+CursorLineSign       -> SignColumn
+Debug                -> Special
+Define               -> PreProc
+Delimiter            -> Special
+Exception            -> Statement
+Float                -> Constant
+Function             -> Identifier
+Include              -> PreProc
+Keyword              -> Statement
+Label                -> Statement
+LineNrAbove          -> LineNr
+LineNrBelow          -> LineNr
+Macro                -> PreProc
+MessageWindow        -> WarningMsg
+Number               -> Constant
+Operator             -> Statement
+PmenuKind            -> Pmenu
+PmenuKindSel         -> PmenuSel
+PmenuExtra           -> Pmenu
+PmenuExtraSel        -> PmenuSel
+PmenuMatch           -> Pmenu
+PmenuMatchSel        -> PmenuSel
+PopupNotification    -> WarningMsg
+PopupSelected        -> PmenuSel
+PreCondit            -> PreProc
+QuickFixLine         ->  Search
+Removed              -> diffRemoved
+Repeat               -> Statement
+SpecialChar          -> Special
+SpecialComment       -> Special
+StatusLineTerm       -> StatusLine
+StatusLineTermNC     -> StatusLineNC
+StorageClass         -> Type
+Structure            -> Type
+Tag                  -> Special
+Typedef              -> Type
+debugBreakpoint      -> SignColumn
+debugPC              -> SignColumn
+; See `:help lCursor`
+lCursor              -> Cursor
+; }}}
+
+Background: dark
+
+; Color palette for dark variant (Modus Vivendi) {{{
+; Color name                GUI                  Base256    Base16 (optional)
+
+; Base values
+Color: bg_main #000000 ~ Black
+Color: bg_dim #1e1e1e ~ Black
+Color: bg_alt #0f0f0f ~ LightGrey
+Color: fg_main #ffffff ~ White
+Color: fg_dim #989898 ~ White
+Color: fg_alt #c6daff ~ White
+Color: border #646464 ~ DarkGrey
+Color: border_highlight #C4C4C4 ~ White
+
+; Common foreground values
+Color: red #ff5f59 ~ DarkRed
+Color: red_warmer #ff6b55 ~ LightRed
+Color: red_cooler #ff7f9f ~ DarkRed
+Color: red_faint #ff9580 ~ LightRed
+Color: green #44bc44 ~ DarkGreen
+Color: green_warmer #70b900 ~ LightGreen
+Color: green_cooler #00c06f ~ DarkGreen
+Color: green_faint #88ca9f ~ LightGreen
+Color: yellow #d0bc00 ~ DarkYellow
+Color: yellow_warmer #fec43f ~ LightYellow
+Color: yellow_cooler #dfaf7a ~ DarkYellow
+Color: yellow_faint #D2B580 ~ LightYellow
+Color: blue #2fafff ~ DarkBlue
+Color: blue_warmer #79a8ff ~ LightBlue
+Color: blue_cooler #00bcff ~ DarkBlue
+Color: blue_faint #82b0ec ~ LightBlue
+Color: magenta #feacd0 ~ DarkMagenta
+Color: magenta_warmer #f78fe7 ~ LightMagenta
+Color: magenta_cooler #b6a0ff ~ DarkMagenta
+Color: magenta_faint #caa6df ~ LightMagenta
+Color: cyan #00d3d0 ~ DarkCyan
+Color: cyan_warmer #4ae2f0 ~ LightCyan
+Color: cyan_cooler #6ae4b9 ~ DarkCyan
+Color: cyan_faint #9ac8e0 ~ LightCyan
+Color: rust #db7b5f ~ LightYellow
+Color: gold #c0965b ~ DarkYellow
+Color: olive #9cbd6f ~ LightGreen
+Color: slate #76afbf ~ DarkGreen
+Color: indigo #9099d9 ~ LightMagenta
+Color: maroon #cf7fa7 ~ DarkMagenta
+Color: pink #d09dc0 ~ LightMagenta
+
+; These foreground values can only be used for non-text elements with a 3:1
+; contrast ratio. Combine with bg_main, bg_dim, bg_alt
+Color: red_intense #ff5f5f ~ LightRed
+Color: green_intense #44df44 ~ LightGreen
+Color: yellow_intense #efef00 ~ LightYellow
+Color: blue_intense #338fff ~ LightBlue
+Color: magenta_intense #ff66ff ~ LightMagenta
+Color: cyan_intense #00eff0 ~ LightCyan
+
+; Intense should only be combined with fg_main for text
+Color: bg_red_intense #9d1f1f ~ DarkRed
+Color: bg_green_intense #2f822f ~ DarkGreen
+Color: bg_yellow_intense #7a6100 ~ DarkYellow
+Color: bg_blue_intense #1640b0 ~ DarkBlue
+Color: bg_magenta_intense #7030af ~ DarkMagenta
+Color: bg_cyan_intense #2266ae ~ DarkCyan
+
+; Subtle should be combined with fg_alt, fg_main
+Color: bg_red_subtle #620f2a ~ DarkRed
+Color: bg_green_subtle #00422a ~ DarkGreen
+Color: bg_yellow_subtle #4a4000 ~ DarkYellow
+Color: bg_blue_subtle #242679 ~ DarkBlue
+Color: bg_magenta_subtle #552f5f ~ DarkMagenta
+Color: bg_cyan_subtle #004065 ~ DarkCyan
+
+; Nuanced can be combined with corresponding foreground ie. bg_red_nuanced with red
+Color: bg_red_nuanced #2c0614 ~ LightRed
+Color: bg_green_nuanced #001904 ~ LightGreen
+Color: bg_yellow_nuanced #221000 ~ LightYellow
+Color: bg_blue_nuanced #0f0e39 ~ LightBlue
+Color: bg_magenta_nuanced #230631 ~ LightMagenta
+Color: bg_cyan_nuanced #041529 ~ LightCyan
+
+; Special purpose
+Color: bg_completion #2f447f ~ DarkBLue
+Color: bg_hl_line #2f3849 ~ DarkGreen
+Color: bg_paren_match #2f7f9f ~ LightBlue
+Color: bg_paren_expression #453040 ~ DarkGray
+Color: bg_char_0 #0050af ~ LightBlue
+Color: bg_char_1 #7f1f7f ~ LightMagenta
+Color: bg_char_2 #625a00 ~ DarkYellow
+; Common active/inactive colors
+Color: bg_active #303030 ~ Black
+Color: fg_active #f4f4f4 ~ White
+Color: bg_inactive #282828 ~ DarkGray
+Color: fg_inactive #bfc0c4 ~ LightGray
+; Status line specific colors
+Color: bg_status_line_active #404040 ~ DarkGray
+Color: fg_status_line_active #f0f0f0 ~ LightGray
+Color: bg_status_line_inactive #2d2d2d ~ DarkGray
+Color: fg_status_line_inactive #969696 ~ LightGray
+; tab bar colors for tab pages
+Color: bg_tab_bar #313131 ~ DarkGray
+Color: bg_tab_current #000000 ~ DarkBlue
+Color: bg_tab_other #545454 ~ DarkGray
+Color: fg_tab_other #f7f7f7 ~ LightGray
+Color: bg_tab_alternate #545490 ~ DarkGray
+; git diffs
+Color: bg_added #00381f ~ DarkGreen
+Color: bg_added_faint #002910 ~ LightGreen
+Color: bg_added_refine #034f2f ~ DarkGreen
+Color: bg_added_fringe #237f3f ~ LightGreen
+Color: fg_added #a0e0a0 ~ LightGreen
+Color: fg_added_intense #80e080 ~ LightGreen
+Color: bg_changed #363300 ~ DarkYellow
+Color: bg_changed_faint #2a1f00 ~ LightYellow
+Color: bg_changed_refine #4a4a00 ~ DarkYellow
+Color: bg_changed_fringe #8a7a00 ~ LightYellow
+Color: fg_changed #efef80 ~ LightYellow
+Color: fg_changed_intense #c0b05f ~ LightYellow
+Color: bg_removed #4f1119 ~ DarkRed
+Color: bg_removed_faint #380a0f ~ DarkRed
+Color: bg_removed_refine #781a1f ~ LightRed
+Color: bg_removed_fringe #b81a1f ~ LightRed
+Color: fg_removed #ffbfbf ~ DarkRed
+Color: fg_removed_intense #ff9095 ~ DarkRed
+Color: bg_diff_context #1a1a1a ~ Black
+
+; Tinted Variant
+; Color: tinted_bg_main #0d0e1c ~
+; Color: tinted_bg_dim #1d2235 ~
+; Color: tinted_border #61647a ~
+; Color: tinted_border_highlight #b290b0 ~
+; Color: tinted_bg_active #4a4f69 ~
+; Color: tinted_bg_inactive #2b3045 ~
+; Color: tinted_red_faint #ff9f80 ~
+; Color: tinted_bg_red_nuanced #350f14 ~
+; Color: tinted_bg_green_nuanced #002718 ~
+; Color: tinted_bg_yellow_nuanced #2c1f00 ~
+; Color: tinted_bg_blue_nuanced #131c4d ~
+; Color: tinted_bg_magenta_nuanced #2f133f ~
+; Color: tinted_bg_cyan_nuanced #04253f ~
+; Color: tinted_bg_completion #483d8a ~
+; Color: tinted_bg_hl_line #303a6f ~
+; Color: tinted_bg_paren_match #2f7f9f ~
+; Color: tinted_bg_status_line_active #393F51 ~
+; Color: tinted_bg_status_line_inactive #292d48 ~
+; Color: tinted_bg_tab_bar #2c3045 ~
+; Color: tinted_bg_tab_current #0d0e1c ~
+; Color: tinted_bg_tab_other #4a4f6a ~
+; Color: tinted_bg_tab_alternate #4a4f94 ~
+; Color: tinted_bg_added #003a2f ~
+; Color: tinted_bg_added_faint #002922 ~
+; Color: tinted_bg_added_refine #035542 ~
+; Color: tinted_bg_added_fringe #23884f ~
+; Color: tinted_bg_changed_fringe #8f7a30 ~
+; Color: tinted_bg_removed #4f1127 ~
+; Color: tinted_bg_removed_faint #380a19 ~
+; Color: tinted_bg_removed_refine #781a3a ~
+; Color: tinted_bg_removed_fringe #b81a26 ~
+; Color: tinted_bg_diff_context #1a1f30 ~
+
+; Deuteranopia Variant
+; Color: deuteranopia_yellow #cabf00 ~
+; Color: deuteranopia_yellow_warmer #ffa00f ~
+; Color: deuteranopia_yellow_cooler #d8af7a ~
+; Color: deuteranopia_bg_status_line_active #2a2a6a ~
+; Color: deuteranopia_fg_status_line_active #f0f0f0 ~
+; Color: deuteranopia_bg_added #003066 ~
+; Color: deuteranopia_bg_added_faint #001a4f ~
+; Color: deuteranopia_bg_added_refine #0f4a77 ~
+; Color: deuteranopia_bg_added_fringe #006fff ~
+; Color: deuteranopia_fg_added #c4d5ff ~
+; Color: deuteranopia_fg_added_intense #8080ff ~
+; Color: deuteranopia_bg_changed #2f123f ~
+; Color: deuteranopia_bg_changed_faint #1f022f ~
+; Color: deuteranopia_bg_changed_refine #3f325f ~
+; Color: deuteranopia_bg_changed_fringe #7f55a0 ~
+; Color: deuteranopia_fg_changed #e3cfff ~
+; Color: deuteranopia_fg_changed_intense #cf9fe2 ~
+; Color: deuteranopia_bg_removed #3d3d00 ~
+; Color: deuteranopia_bg_removed_faint #281f00 ~
+; Color: deuteranopia_bg_removed_refine #555500 ~
+; Color: deuteranopia_bg_removed_fringe #d0c03f ~
+; Color: deuteranopia_fg_removed #d4d48f ~
+; Color: deuteranopia_fg_removed_intense #d0b05f ~
+
+; Tritanopia Variant
+; Color: tritanopia_red_warmer #ff6740 ~
+; Color: tritanopia_red_cooler #ff6f9f ~
+; Color: tritanopia_red_faint #ff9070 ~
+; Color: tritanopia_yellow #cabf00 ~
+; Color: tritanopia_yellow_warmer #ffa00f ~
+; Color: tritanopia_yellow_cooler #d8af7a ~
+; Color: tritanopia_cyan_warmer #4ae2ff ~
+; Color: tritanopia_cyan_faint #7fdbdf ~
+; Color: tritanopia_magenta_intense #ef7fff ~
+; Color: tritanopia_bg_completion #004253 ~
+; Color: tritanopia_bg_hl_line #2f3849 ~
+; Color: tritanopia_bg_char_0 #922a00 ~
+; Color: tritanopia_bg_char_1 #00709f ~
+; Color: tritanopia_bg_char_2 #5f3faf ~
+; Color: tritanopia_bg_status_line_active #003c52 ~
+; Color: tritanopia_fg_status_line_active #f0f0f0 ~
+; Color: tritanopia_bg_added #004254 ~
+; Color: tritanopia_bg_added_faint #003042 ~
+; Color: tritanopia_bg_added_refine #004f7f ~
+; Color: tritanopia_bg_added_fringe #008fcf ~
+; Color: tritanopia_fg_added #9fdfdf ~
+; Color: tritanopia_fg_added_intense #50c0ef ~
+; Color: tritanopia_bg_changed #2f123f ~
+; Color: tritanopia_bg_changed_faint #1f022f ~
+; Color: tritanopia_bg_changed_refine #3f325f ~
+; Color: tritanopia_bg_changed_fringe #7f55a0 ~
+; Color: tritanopia_fg_changed #e3cfff ~
+; Color: tritanopia_fg_changed_intense #cf9fe2 ~
+;
+; }}}
+
+; Terminal colors for dark variant {{{
+Term colors: bg_main red green yellow blue magenta cyan fg_main
+Term colors: bg_alt red_warmer green_warmer yellow_warmer
+Term colors: blue_warmer magenta_warmer cyan_warmer fg_alt
+; }}}
+
+; Definitions common to all variants {{{
+Variant: gui
+#if get(g:, '@optionprefix_transp_bg', 0) && !has('gui_running')
+; Variant: 256 8
+Variant: 256 
+#if get(g:, '@optionprefix_transp_bg', 0)
+; Variant: gui 256 8
+Variant: gui 256 
+    Normal           fg_main             none
+    Terminal         fg_main             none
+#else
+    Normal           fg_main             bg_main
+    Terminal         fg_main             bg_main
+#endif
+
+; Group              Foreground        Background        Attributes
+ColorColumn          fg_main           bg_main                                  
+Conceal              yellow_faint      none                                     
+Cursor               fg_main           rust              reverse                
+CursorColumn         none              bg_hl_line                               
+CursorLine           none              bg_hl_line                               
+CursorLineNr         fg_active         bg_active                                
+DiffAdd              fg_added          bg_added                                 
+DiffChange           fg_changed        bg_changed                               
+DiffDelete           fg_removed        bg_removed                               
+DiffText             fg_changed        bg_changed                               
+Directory            blue              none                                     
+EndOfBuffer          bg_main           none                                     
+ErrorMsg             fg_main           bg_red_intense                           
+FoldColumn           fg_inactive       bg_inactive                              
+Folded               green_faint       bg_dim            italic                 
+IncSearch            fg_main           bg_yellow_intense t=reverse g=standout   
+LineNr               fg_dim            bg_dim                                   
+MatchParen           fg_main           bg_paren_match                           
+ModeMsg              fg_dim            none                                     
+MoreMsg              blue              none                                     
+NonText              fg_dim            none                                     
+Pmenu                fg_active         bg_active                                
+PmenuSbar            bg_main           fg_dim                                   
+PmenuSel             fg_main           bg_dim            reverse                
+PmenuThumb           fg_main           bg_main                                  
+Question             blue              none                                     
+Search               fg_main           bg_green_intense                         
+SignColumn           fg_dim            bg_dim                                   
+SpecialKey           fg_dim            none                                     
+SpellBad             red_intense       none              s=red_intense          
+SpellCap             yellow_intense    none              s=yellow_intense       
+SpellLocal           blue_faint        none              s=blue_faint           
+SpellRare            green_faint       none              s=green_faint          
+StatusLine           fg_status_line_active  bg_status_line_active               
+StatusLineNC         fg_status_line_inactive bg_status_line_inactive            
+TabLine              fg_tab_other      bg_tab_other                             
+TabLineFill          fg_dim            bg_tab_bar                               
+TabLineSel           fg_main           bg_tab_current                           
+Title                fg_alt            none                                     
+VertSplit            border            border                                   
+Visual               bg_main           fg_alt                                   
+VisualNOS            fg_main           magenta_faint                            
+WarningMsg           red_faint         none                                     
+WildMenu             bg_main           yellow_warmer                            
+; Other conventional group names (see `:help group-name`)
+Comment              fg_dim            none              italic
+Constant             magenta_warmer    none
+Error                fg_main           bg_red_intense    reverse
+Identifier           cyan              none
+Ignore               fg_main           none
+PreProc              red_cooler        none
+Special              cyan_cooler       none
+Statement            magenta_cooler    none
+Todo                 magenta           none              bold
+Type                 cyan_cooler       none
+Underlined           fg_alt            none
+String               blue              none
+Quote                cyan_faint        none
+; See `:help CursorIM`
+CursorIM             fg_main           bg_main 
+; See `:help window-toolbar`
+ToolbarLine          fg_dim            border
+ToolbarButton        bg_main           border_highlight  bold
+; Language and plugins
+jsObjectKey          magenta_warmer    none
+jsObjectValue        magenta_faint     none
+jsObjectProp         green_faint       none
+jsTemplateExpression cyan_cooler       none
+jsModuleKeyword      green_faint       none
+javaScriptParens     cyan_warmer       none
+jsTemplateBraces     yellow_cooler     none
+jsDestructuringBraces yellow_cooler    none
+jsBrackets           yellow_cooler     none
+jsBraces             yellow_cooler     none
+jsParens             yellow_cooler     none
+jsFuncParens         yellow_cooler     none
+jsClassBraces        yellow_cooler     none
+jsFuncBraces         yellow_cooler     none
+jsObjectBraces       yellow_cooler     none
+jsRepeatBraces       yellow_cooler     none
+jsIfElseBraces       yellow_cooler     none
+jsTryCatchBraces     yellow_cooler     none
+jsVariableDef        magenta_warmer    none
+NERDTreeFile         cyan_cooler       none
+; }}}
+
+Background: light
+
+; Color palette for light variant (Modus Operandi) {{{
+; Color name                GUI                  Base256    Base16 (optional)
+
+; Base values
+Color: bg_main #ffffff ~
+Color: bg_dim #f2f2f2 ~
+Color: bg_alt #f0f0f0 ~
+Color: fg_main #000000 ~
+Color: fg_dim #595959 ~
+Color: fg_alt #193668 ~
+Color: border #9f9f9f ~
+Color: border_highlight #3b3b3b ~
+
+; Common foreground values
+Color: red #a60000 ~
+Color: red_warmer #972500 ~
+Color: red_cooler #a0132f ~
+Color: red_faint #7f0000 ~
+Color: green #006800 ~
+Color: green_warmer #316500 ~
+Color: green_cooler #00663f ~
+Color: green_faint #2a5045 ~
+Color: yellow #6f5500 ~
+Color: yellow_warmer #884900 ~
+Color: yellow_cooler #7a4f2f ~
+Color: yellow_faint #624416 ~
+Color: blue #0031a9 ~
+Color: blue_warmer #3548cf ~
+Color: blue_cooler #0000b0 ~
+Color: blue_faint #003497 ~
+Color: magenta #721045 ~
+Color: magenta_warmer #8f0075 ~
+Color: magenta_cooler #531ab6 ~
+Color: magenta_faint #7c318f ~
+Color: cyan #005e8b ~
+Color: cyan_warmer #3f578f ~
+Color: cyan_cooler #005f5f ~
+Color: cyan_faint #005077 ~
+Color: rust #8a290f ~
+Color: gold #80601f ~
+Color: olive #56692d ~
+Color: slate #2f3f83 ~
+Color: indigo #4a3a8a ~
+Color: maroon #731c52 ~
+Color: pink #7b435c ~
+
+; These foreground values can only be used for non-text elements with a 3:1
+; contrast ratio. Combine with bg_main, bg_dim, bg_alt
+Color: red_intense #d00000 ~
+Color: green_intense #008900 ~
+Color: yellow_intense #808000 ~
+Color: blue_intense #0000ff ~
+Color: magenta_intense #dd22dd ~
+Color: cyan_intense #008899 ~
+
+; Intense should only be combined with fg_main for text
+Color: bg_red_intense #ff8f88 ~
+Color: bg_green_intense #8adf80 ~
+Color: bg_yellow_intense #f3d000 ~
+Color: bg_blue_intense #bfc9ff ~
+Color: bg_magenta_intense #dfa0f0 ~
+Color: bg_cyan_intense #a4d5f9 ~
+
+; Subtle should be combined with fg_alt, fg_main
+Color: bg_red_subtle #ffcfbf ~
+Color: bg_green_subtle #b3fabf ~
+Color: bg_yellow_subtle #fff576 ~
+Color: bg_blue_subtle #ccdfff ~
+Color: bg_magenta_subtle #ffddff ~
+Color: bg_cyan_subtle #bfefff ~
+
+; Nuanced can be combined with their foreground ie. bg_red_nuanced with red
+Color: bg_red_nuanced #fff1f0 ~
+Color: bg_green_nuanced #ecf7ed ~
+Color: bg_yellow_nuanced #fff3da ~
+Color: bg_blue_nuanced #f3f3ff ~
+Color: bg_magenta_nuanced #fdf0ff ~
+Color: bg_cyan_nuanced #ebf6fa ~
+
+; Special purpose
+Color: bg_completion #c0deff ~
+Color: bg_hl_line #d0d6ec ~
+Color: bg_paren_match #5fcfff ~
+Color: bg_paren_expression #efd3f5 ~
+Color: bg_char_0 #7feaff ~
+Color: bg_char_1 #ffaaff ~
+Color: bg_char_2 #dff000 ~
+; Common active/inactive colors
+Color: bg_active #e0e0e0 ~
+Color: fg_active #0a0a0a ~
+Color: bg_inactive #e9e9e9 ~
+Color: fg_inactive #404148 ~
+; Status line specific colors
+Color: bg_status_line_active #c8c8c8 ~
+Color: fg_status_line_active #0a0a0a ~
+Color: bg_status_line_inactive #e6e6e6 ~
+Color: fg_status_line_inactive #585858 ~
+; tab bar colors for tab pages
+Color: bg_tab_bar #dfdfdf ~
+Color: bg_tab_current #ffffff ~
+Color: bg_tab_other #c2c2c2 ~
+Color: fg_tab_other #333333 ~
+Color: bg_tab_alternate #c2c2e8 ~
+; git diffs
+Color: bg_added #c1f2d1 ~
+Color: bg_added_faint #d8f8e1 ~
+Color: bg_added_refine #aee5be ~
+Color: bg_added_fringe #6cc06c ~
+Color: fg_added #005000 ~
+Color: fg_added_intense #006700 ~
+Color: bg_changed #ffdfa9 ~
+Color: bg_changed_faint #ffefbf ~
+Color: bg_changed_refine #fac090 ~
+Color: bg_changed_fringe #d7c20a ~
+Color: fg_changed #553d00 ~
+Color: fg_changed_intense #655000 ~
+Color: bg_removed #ffd8d5 ~
+Color: bg_removed_faint #ffe9e9 ~
+Color: bg_removed_refine #f3b5af ~
+Color: bg_removed_fringe #d84a4f ~
+Color: fg_removed #8f1313 ~
+Color: fg_removed_intense #aa2222 ~
+Color: bg_diff_context #f3f3f3 ~
+
+; Tinted variant
+; Color: tinted_bg_main #fbf7f0 ~
+; Color: tinted_bg_dim #efe9dd ~
+; Color: tinted_border #9f9690 ~
+; Color: tinted_border_highlight #5c3f3d ~
+; Color: tinted_bg_active #c9b9b0 ~
+; Color: tinted_bg_inactive #dfd5cf ~
+; Color: tinted_red_faint #7f0000 ~
+; Color: tinted_bg_red_nuanced #ffe8f0 ~
+; Color: tinted_bg_green_nuanced #e0f5e0 ~
+; Color: tinted_bg_yellow_nuanced #f9ead0 ~
+; Color: tinted_bg_blue_nuanced #ebebff ~
+; Color: tinted_bg_magenta_nuanced #f6e7ff ~
+; Color: tinted_bg_cyan_nuanced #e1f3fc ~
+; Color: tinted_bg_completion #f0c1cf ~
+; Color: tinted_bg_hl_line #f1d5d0 ~
+; Color: tinted_bg_paren_match #7fdfcf ~
+; Color: tinted_bg_status_line_active #cab9b2 ~
+; Color: tinted_bg_status_line_inactive #dfd9cf ~
+; Color: tinted_bg_tab_bar #e0d4ce ~
+; Color: tinted_bg_tab_current #fbf7f0 ~
+; Color: tinted_bg_tab_other #c8b8b2 ~
+; Color: tinted_bg_tab_alternate #c8b8ca ~
+; Color: tinted_bg_added #c3ebc1 ~
+; Color: tinted_bg_added_faint #dcf8d1 ~
+; Color: tinted_bg_added_refine #acd6a5 ~
+; Color: tinted_bg_added_fringe #6cc06c ~
+; Color: tinted_bg_changed_fringe #c0b200 ~
+; Color: tinted_bg_removed #f4d0cf ~
+; Color: tinted_bg_removed_faint #ffe9e5 ~
+; Color: tinted_bg_removed_refine #f3b5a7 ~
+; Color: tinted_bg_removed_fringe #d84a4f ~
+; Color: tinted_bg_diff_context #efe9df ~
+
+; Deuteranopia Variant
+; Color: deuteranopia_yellow #695500 ~
+; Color: deuteranopia_yellow_warmer #973300 ~
+; Color: deuteranopia_yellow_cooler #77492f ~
+; Color: deuteranopia_bg_status_line_active #d0d6ff ~
+; Color: deuteranopia_fg_status_line_active #0f0f0f ~
+; Color: deuteranopia_bg_added #d5d7ff ~
+; Color: deuteranopia_bg_added_faint #e6e6ff ~
+; Color: deuteranopia_bg_added_refine #babcef ~
+; Color: deuteranopia_bg_added_fringe #275acc ~
+; Color: deuteranopia_fg_added #303099 ~
+; Color: deuteranopia_fg_added_intense #0303cc ~
+; Color: deuteranopia_bg_changed #eecfdf ~
+; Color: deuteranopia_bg_changed_faint #f0dde5 ~
+; Color: deuteranopia_bg_changed_refine #e0b0d0 ~
+; Color: deuteranopia_bg_changed_fringe #9f6ab0 ~
+; Color: deuteranopia_fg_changed #6f1343 ~
+; Color: deuteranopia_fg_changed_intense #7f0f9f ~
+; Color: deuteranopia_bg_removed #f4f099 ~
+; Color: deuteranopia_bg_removed_faint #f6f6b7 ~
+; Color: deuteranopia_bg_removed_refine #ede06f ~
+; Color: deuteranopia_bg_removed_fringe #c0b200 ~
+; Color: deuteranopia_fg_removed #553d00 ~
+; Color: deuteranopia_fg_removed_intense #7f6f00 ~
+
+; Tritanopia Variant
+; Color: tritanopia_red_warmer #b21100 ~
+; Color: tritanopia_red_cooler #a0132f ~
+; Color: tritanopia_red_faint #702000 ~
+; Color: tritanopia_yellow #695500 ~
+; Color: tritanopia_yellow_warmer #973300 ~
+; Color: tritanopia_yellow_cooler #77492f ~
+; Color: tritanopia_cyan_warmer #3f578f ~
+; Color: tritanopia_cyan_faint #004f5f ~
+; Color: tritanopia_magenta_intense #cd22bd ~
+; Color: tritanopia_bg_completion #afdfef ~
+; Color: tritanopia_bg_hl_line #dfeaec ~
+; Color: tritanopia_bg_char_0 #ff908f ~
+; Color: tritanopia_bg_char_1 #bfbfff ~
+; Color: tritanopia_bg_char_2 #5fcfdf ~
+; Color: tritanopia_bg_status_line_active #afe0f2 ~
+; Color: tritanopia_fg_status_line_active #0f0f0f ~
+; Color: tritanopia_bg_added #b5e7ff ~
+; Color: tritanopia_bg_added_faint #c6f6ff ~
+; Color: tritanopia_bg_added_refine #9adcef ~
+; Color: tritanopia_bg_added_fringe #1782cc ~
+; Color: tritanopia_fg_added #005079 ~
+; Color: tritanopia_fg_added_intense #0043aa ~
+; Color: tritanopia_bg_changed #eecfdf ~
+; Color: tritanopia_bg_changed_faint #f0dde5 ~
+; Color: tritanopia_bg_changed_refine #e0b0d0 ~
+; Color: tritanopia_bg_changed_fringe #9f6ab0 ~
+; Color: tritanopia_fg_changed #6f1343 ~
+; Color: tritanopia_fg_changed_intense #7f0f9f ~
+
+; }}}
+
+; Terminal colors for light variant {{{
+Term colors: bg_main red green yellow blue magenta cyan fg_main
+Term colors: bg_alt red_warmer green_warmer yellow_warmer
+Term colors: blue_warmer magenta_warmer cyan_warmer fg_alt
+; }}}
+
+; Definitions common to all variants {{{
+Variant: gui
+#if get(g:, '@optionprefix_transp_bg', 0) && !has('gui_running')
+; Variant: 256 8
+Variant: 256 
+#if get(g:, '@optionprefix_transp_bg', 0)
+; Variant: gui 256 8
+Variant: gui 256 
+    Normal           fg_main             none
+    Terminal         fg_main             none
+#else
+    Normal           fg_main             bg_main
+    Terminal         fg_main             bg_main
+#endif
+
+; Group              Foreground        Background        Attributes
+ColorColumn          fg_main           bg_main                                  
+Conceal              yellow_faint      none                                     
+Cursor               fg_main           rust              reverse                
+CursorColumn         none              bg_hl_line                               
+CursorLine           none              bg_hl_line                               
+CursorLineNr         fg_active         bg_active                                
+DiffAdd              fg_added          bg_added                                 
+DiffChange           fg_changed        bg_changed                               
+DiffDelete           fg_removed        bg_removed                               
+DiffText             fg_changed        bg_changed                               
+Directory            blue              none                                     
+EndOfBuffer          bg_main           none                                     
+ErrorMsg             fg_main           bg_red_intense                           
+FoldColumn           fg_inactive       bg_inactive                              
+Folded               green_faint       bg_dim            italic                 
+IncSearch            fg_main           bg_yellow_intense t=reverse g=standout   
+LineNr               fg_dim            bg_dim                                   
+MatchParen           fg_main           bg_paren_match                           
+ModeMsg              fg_dim            none                                     
+MoreMsg              blue              none                                     
+NonText              fg_dim            none                                     
+Pmenu                fg_active         bg_active                                
+PmenuSbar            bg_main           fg_dim                                   
+PmenuSel             fg_main           bg_dim            reverse                
+PmenuThumb           fg_main           bg_main                                  
+Question             blue              none                                     
+Search               fg_main           bg_green_intense                         
+SignColumn           fg_dim            bg_dim                                   
+SpecialKey           fg_dim            none                                     
+SpellBad             red_intense       none              s=red_intense          
+SpellCap             yellow_intense    none              s=yellow_intense       
+SpellLocal           blue_faint        none              s=blue_faint           
+SpellRare            green_faint       none              s=green_faint          
+StatusLine           fg_status_line_active  bg_status_line_active               
+StatusLineNC         fg_status_line_inactive bg_status_line_inactive            
+TabLine              fg_tab_other      bg_tab_other                             
+TabLineFill          fg_dim            bg_tab_bar                               
+TabLineSel           fg_main           bg_tab_current                           
+Title                fg_alt            none                                     
+VertSplit            border            border                                   
+Visual               bg_main           fg_alt                                   
+VisualNOS            fg_main           magenta_faint                            
+WarningMsg           red_faint         none                                     
+WildMenu             bg_main           yellow_warmer                            
+; Other conventional group names (see `:help group-name`)
+Comment              fg_dim            none              italic
+Constant             magenta_warmer    none
+Error                fg_main           bg_red_intense    reverse
+Identifier           cyan              none
+Ignore               fg_main           none
+PreProc              red_cooler        none
+Special              cyan_cooler       none
+Statement            magenta_cooler    none
+Todo                 magenta           none              bold
+Type                 cyan_cooler       none
+Underlined           fg_alt            none
+String               blue              none
+Quote                cyan_faint        none
+; See `:help CursorIM`
+CursorIM             fg_main           bg_main 
+; See `:help window-toolbar`
+ToolbarLine          fg_dim            border
+ToolbarButton        bg_main           border_highlight  bold
+; Language and plugins
+jsObjectKey          magenta_warmer    none
+jsObjectValue        magenta_faint     none
+jsObjectProp         green_faint       none
+jsTemplateExpression cyan_cooler       none
+jsModuleKeyword      green_faint       none
+javaScriptParens     cyan_warmer       none
+jsTemplateBraces     yellow_cooler     none
+jsDestructuringBraces yellow_cooler    none
+jsBrackets           yellow_cooler     none
+jsBraces             yellow_cooler     none
+jsParens             yellow_cooler     none
+jsFuncParens         yellow_cooler     none
+jsClassBraces        yellow_cooler     none
+jsFuncBraces         yellow_cooler     none
+jsObjectBraces       yellow_cooler     none
+jsRepeatBraces       yellow_cooler     none
+jsIfElseBraces       yellow_cooler     none
+jsTryCatchBraces     yellow_cooler     none
+jsVariableDef        magenta_warmer    none
+NERDTreeFile         cyan_cooler       none
+; }}}
+
+Background: any
+Include: _bw.colortemplate
+
