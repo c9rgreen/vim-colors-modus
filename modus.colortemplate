@@ -307,7 +307,7 @@ Variant: gui 256
 ; Group              Foreground        Background        Attributes
 ColorColumn          fg_main           bg_main                                  
 Conceal              yellow_faint      none                                     
-Cursor               fg_main           rust              reverse                
+Cursor               bg_main           rust              
 CursorColumn         none              bg_hl_line                               
 CursorLine           none              bg_hl_line                               
 CursorLineNr         fg_active         bg_active                                
@@ -632,7 +632,7 @@ Variant: gui 256
 ; Group              Foreground        Background        Attributes
 ColorColumn          fg_main           bg_main                                  
 Conceal              yellow_faint      none                                     
-Cursor               fg_main           rust              reverse                
+Cursor               bg_main           rust              
 CursorColumn         none              bg_hl_line                               
 CursorLine           none              bg_hl_line                               
 CursorLineNr         fg_active         bg_active                                
