@@ -304,92 +304,10 @@ Variant: gui 256
     Terminal         fg_main             bg_main
 #endif
 
-; Group              Foreground        Background        Attributes
-ColorColumn          fg_main           bg_main                                  
-Conceal              yellow_faint      none                                     
-Cursor               bg_main           rust              
-CursorColumn         none              bg_hl_line                               
-CursorLine           none              bg_hl_line                               
-CursorLineNr         fg_active         bg_active                                
-DiffAdd              fg_added          bg_added                                 
-DiffChange           fg_changed        bg_changed                               
-DiffDelete           fg_removed        bg_removed                               
-DiffText             fg_changed        bg_changed                               
-Directory            blue              none                                     
-EndOfBuffer          bg_main           none                                     
-ErrorMsg             fg_main           bg_red_intense                           
-FoldColumn           fg_inactive       bg_inactive                              
-Folded               green_faint       bg_dim            italic                 
-IncSearch            fg_main           bg_yellow_intense t=reverse g=standout   
-LineNr               fg_dim            bg_dim                                   
-MatchParen           fg_main           bg_paren_match                           
-ModeMsg              fg_dim            none                                     
-MoreMsg              blue              none                                     
-NonText              fg_dim            none                                     
-Pmenu                fg_active         bg_active                                
-PmenuSbar            bg_main           fg_dim                                   
-PmenuSel             fg_main           bg_dim            reverse                
-PmenuThumb           fg_main           bg_main                                  
-Question             blue              none                                     
-Search               fg_main           bg_green_intense                         
-SignColumn           fg_dim            bg_dim                                   
-SpecialKey           fg_dim            none                                     
-SpellBad             red_intense       none              s=red_intense          
-SpellCap             yellow_intense    none              s=yellow_intense       
-SpellLocal           blue_faint        none              s=blue_faint           
-SpellRare            green_faint       none              s=green_faint          
-StatusLine           fg_status_line_active  bg_status_line_active               
-StatusLineNC         fg_status_line_inactive bg_status_line_inactive            
-TabLine              fg_tab_other      bg_tab_other                             
-TabLineFill          fg_dim            bg_tab_bar                               
-TabLineSel           fg_main           bg_tab_current                           
-Title                fg_alt            none                                     
-VertSplit            border            border                                   
-Visual               bg_main           fg_alt                                   
-VisualNOS            fg_main           magenta_faint                            
-WarningMsg           red_faint         none                                     
-WildMenu             bg_main           yellow_warmer                            
-; Other conventional group names (see `:help group-name`)
-Comment              fg_dim            none              italic
-Constant             magenta_warmer    none
-Error                fg_main           bg_red_intense    reverse
-Identifier           cyan              none
-Ignore               fg_main           none
-PreProc              red_cooler        none
-Special              cyan_cooler       none
-Statement            magenta_cooler    none
-Todo                 magenta           none              bold
-Type                 cyan_cooler       none
-Underlined           fg_alt            none
-String               blue              none
-Quote                cyan_faint        none
-; See `:help CursorIM`
-CursorIM             fg_main           bg_main 
-; See `:help window-toolbar`
-ToolbarLine          fg_dim            border
-ToolbarButton        bg_main           border_highlight  bold
-; Language and plugins
-jsObjectKey          magenta_warmer    none
-jsObjectValue        magenta_faint     none
-jsObjectProp         green_faint       none
-jsTemplateExpression cyan_cooler       none
-jsModuleKeyword      green_faint       none
-javaScriptParens     cyan_warmer       none
-jsTemplateBraces     yellow_cooler     none
-jsDestructuringBraces yellow_cooler    none
-jsBrackets           yellow_cooler     none
-jsBraces             yellow_cooler     none
-jsParens             yellow_cooler     none
-jsFuncParens         yellow_cooler     none
-jsClassBraces        yellow_cooler     none
-jsFuncBraces         yellow_cooler     none
-jsObjectBraces       yellow_cooler     none
-jsRepeatBraces       yellow_cooler     none
-jsIfElseBraces       yellow_cooler     none
-jsTryCatchBraces     yellow_cooler     none
-jsVariableDef        magenta_warmer    none
-NERDTreeFile         cyan_cooler       none
 ; }}}
+
+Background: dark
+Include: _theme.colortemplate
 
 Background: light
 
@@ -629,92 +547,10 @@ Variant: gui 256
     Terminal         fg_main             bg_main
 #endif
 
-; Group              Foreground        Background        Attributes
-ColorColumn          fg_main           bg_main                                  
-Conceal              yellow_faint      none                                     
-Cursor               bg_main           rust              
-CursorColumn         none              bg_hl_line                               
-CursorLine           none              bg_hl_line                               
-CursorLineNr         fg_active         bg_active                                
-DiffAdd              fg_added          bg_added                                 
-DiffChange           fg_changed        bg_changed                               
-DiffDelete           fg_removed        bg_removed                               
-DiffText             fg_changed        bg_changed                               
-Directory            blue              none                                     
-EndOfBuffer          bg_main           none                                     
-ErrorMsg             fg_main           bg_red_intense                           
-FoldColumn           fg_inactive       bg_inactive                              
-Folded               green_faint       bg_dim            italic                 
-IncSearch            fg_main           bg_yellow_intense t=reverse g=standout   
-LineNr               fg_dim            bg_dim                                   
-MatchParen           fg_main           bg_paren_match                           
-ModeMsg              fg_dim            none                                     
-MoreMsg              blue              none                                     
-NonText              fg_dim            none                                     
-Pmenu                fg_active         bg_active                                
-PmenuSbar            bg_main           fg_dim                                   
-PmenuSel             fg_main           bg_dim            reverse                
-PmenuThumb           fg_main           bg_main                                  
-Question             blue              none                                     
-Search               fg_main           bg_green_intense                         
-SignColumn           fg_dim            bg_dim                                   
-SpecialKey           fg_dim            none                                     
-SpellBad             red_intense       none              s=red_intense          
-SpellCap             yellow_intense    none              s=yellow_intense       
-SpellLocal           blue_faint        none              s=blue_faint           
-SpellRare            green_faint       none              s=green_faint          
-StatusLine           fg_status_line_active  bg_status_line_active               
-StatusLineNC         fg_status_line_inactive bg_status_line_inactive            
-TabLine              fg_tab_other      bg_tab_other                             
-TabLineFill          fg_dim            bg_tab_bar                               
-TabLineSel           fg_main           bg_tab_current                           
-Title                fg_alt            none                                     
-VertSplit            border            border                                   
-Visual               bg_main           fg_alt                                   
-VisualNOS            fg_main           magenta_faint                            
-WarningMsg           red_faint         none                                     
-WildMenu             bg_main           yellow_warmer                            
-; Other conventional group names (see `:help group-name`)
-Comment              fg_dim            none              italic
-Constant             magenta_warmer    none
-Error                fg_main           bg_red_intense    reverse
-Identifier           cyan              none
-Ignore               fg_main           none
-PreProc              red_cooler        none
-Special              cyan_cooler       none
-Statement            magenta_cooler    none
-Todo                 magenta           none              bold
-Type                 cyan_cooler       none
-Underlined           fg_alt            none
-String               blue              none
-Quote                cyan_faint        none
-; See `:help CursorIM`
-CursorIM             fg_main           bg_main 
-; See `:help window-toolbar`
-ToolbarLine          fg_dim            border
-ToolbarButton        bg_main           border_highlight  bold
-; Language and plugins
-jsObjectKey          magenta_warmer    none
-jsObjectValue        magenta_faint     none
-jsObjectProp         green_faint       none
-jsTemplateExpression cyan_cooler       none
-jsModuleKeyword      green_faint       none
-javaScriptParens     cyan_warmer       none
-jsTemplateBraces     yellow_cooler     none
-jsDestructuringBraces yellow_cooler    none
-jsBrackets           yellow_cooler     none
-jsBraces             yellow_cooler     none
-jsParens             yellow_cooler     none
-jsFuncParens         yellow_cooler     none
-jsClassBraces        yellow_cooler     none
-jsFuncBraces         yellow_cooler     none
-jsObjectBraces       yellow_cooler     none
-jsRepeatBraces       yellow_cooler     none
-jsIfElseBraces       yellow_cooler     none
-jsTryCatchBraces     yellow_cooler     none
-jsVariableDef        magenta_warmer    none
-NERDTreeFile         cyan_cooler       none
 ; }}}
+
+Background: light
+Include: _theme.colortemplate
 
 Background: any
 Include: _bw.colortemplate

@@ -1,4 +1,4 @@
-*modus.txt*	For Vim version 9.1	Last change: 2024 Oct 11
+*modus.txt*	For Vim version 9.1	Last change: 2024 Oct 13
 
 
 		  Modus color scheme    by Christopher
